@@ -147,11 +147,15 @@ function linesToParagraph(lines) {
 }
 
 function indent(paragraph, i) {
+  // 改行のあとに禁則文字以外が続いていたら、スペースを入れる
+  const breakPattern = /(\n)[^「]/
+  const newParagraph = paragraph.replace(breakPattern, '\n　')
+
   if ((false)  // genron wordpress
-    || ['「', '―'].includes(paragraph[0])) {
-    return paragraph
+    || ['「', '―'].includes(newParagraph[0])) {
+    return newParagraph
   }
-  return '　' + paragraph
+  return '　' + newParagraph
 }
 
 function renderTextDirective(node, { showTodos, showNotes }) {
