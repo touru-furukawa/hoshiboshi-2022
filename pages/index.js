@@ -148,8 +148,8 @@ function linesToParagraph(lines) {
 
 function indent(paragraph, i) {
   // 改行のあとに禁則文字以外が続いていたら、スペースを入れる
-  const breakPattern = /(\n)[^「]/
-  const newParagraph = paragraph.replace(breakPattern, '\n　')
+  const breakPattern = /\n([^「])/
+  const newParagraph = paragraph.replace(breakPattern, '\n　$1')
 
   if ((false)  // genron wordpress
     || ['「', '―'].includes(newParagraph[0])) {
