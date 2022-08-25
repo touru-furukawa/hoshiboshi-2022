@@ -24,7 +24,7 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "start": "next-remote-watch src/*"
+    "start": "next-remote-watch draft.md"
   },
   "repository": {
     "type": "git",
